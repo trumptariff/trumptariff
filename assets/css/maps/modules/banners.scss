@@ -1,0 +1,243 @@
+.banner {
+   position: relative;
+   width: 100%;
+   .shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: calc(10% + 105px);
+      background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+   }
+   &.banner-med {
+      min-height: 200px;
+      &:after {
+         display: block;
+         content: '';
+         width: 100%;
+         padding-top: 33%;
+      }
+      .container {
+         // padding-top: 105px;
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         height: 100%;
+         top: 0;
+         align-items: center;
+         display: flex;
+      }
+   }
+   &.banner-main {
+      min-height: 250px;
+      .container {
+         // padding-top: 105px;
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         height: 100%;
+         top: 0;
+         align-items: center;
+         display: flex;
+      }
+      &:after {
+         display: block;
+         content: '';
+         width: 100%;
+         padding-top: 58%;
+      }
+      .social {
+         position: absolute;
+         right: 0;
+         width: 5vw;
+         bottom: 15vw;
+         li {
+            list-style: none;
+            display: block;
+            svg {
+               .st0 {
+                  transition: 300ms ease all;
+               }
+               &:hover {
+                  .st0 {
+                     fill: $djtred;
+                  }
+               }
+            }
+         }
+      }
+   }
+   &.overlap-bottom {
+      .container {
+         padding-bottom: 15vw;
+      } 
+   }
+   &.bar-overlap-bottom {
+      .container {
+         padding-bottom: 69px;
+      } 
+   }
+}
+
+.banner-overlap {
+   > .container {
+      > div {
+         position: relative;
+         top: -15vw;
+         margin-bottom: -15vw;
+      }
+   }
+}
+
+@media screen and (max-width: 960px) {
+
+   .banner {
+      &.overlap-bottom {
+         .container {
+            padding-bottom: 10vw;
+         } 
+      }
+      &.banner-main {
+         .social {
+            width: calc(10vw + 35px);
+            bottom: 10vw;
+            li {
+               display: flex;
+               justify-content: center;
+            }
+         }
+      }
+   }
+
+   .banner-overlap {
+      > .container {
+         > div {
+            top: -10vw;
+            margin-bottom: -10vw;
+         }
+      }
+   }
+
+}
+
+@media screen and (max-width: 768px) {
+
+   .banner {
+      &.overlap-bottom {
+         .container {
+            padding-bottom: 5vw;
+         } 
+      }
+   }
+
+   .banner-overlap {
+      > .container {
+         > div {
+            top: -5vw;
+            margin-bottom: -5vw;
+         }
+      }
+   }
+
+}
+
+@media screen and (max-width: 677px) {
+
+   .banner {
+      &.overlap-bottom {
+         .container {
+            padding-bottom: 5vw;
+         } 
+      }
+      &.banner-main {
+         .container {
+            align-items: flex-end;
+         }
+         .title-lrg-1 {
+            font-size: 6vw;
+            line-height: 6vw;
+         }
+         .title-med-2 {
+            font-size: 3.2vw;
+            line-height: 3.2vw;
+            letter-spacing: 0;
+         }
+         .social {
+            bottom: 5vw;
+            padding-right: 5vw;
+            display: flex;
+            justify-content: flex-end;
+            ul {
+               display: flex;
+            }
+         }
+      }
+   }
+
+   .banner-overlap {
+      padding-top: 3rem;
+      > .container {
+         > div {
+            top: auto;
+            margin-bottom: 0;
+         }
+      }
+   }
+
+}
+
+@media screen and (max-width: 590px) {
+
+   .banner {
+      &.banner-main {
+         .container {
+            padding-top: 5vw;
+            padding-bottom: 5vw;
+         }
+      }
+   }
+
+}
+
+@media screen and (max-width: 500px) {
+
+   .banner {
+      &.bar-overlap-bottom {
+         .container {
+            padding-bottom: 55px;
+         } 
+      }
+   }
+
+}
+
+@media screen and (max-width: 440px) {
+
+   .banner {
+      &.banner-main {
+         .title-lrg-1 {
+            font-size: 6.5vw;
+            line-height: 6.5vw;
+         }
+         .title-sml-1 {
+            font-size: 2.7vw;
+            line-height: 2.7vw;
+         }
+      }
+   }
+
+}
+
+@media screen and (max-width: 320px) {
+
+   .banner {
+      &.banner-main {
+         .social {
+            padding-right: 0;
+            bottom: 0;
+         }
+      }
+   }
+
+}

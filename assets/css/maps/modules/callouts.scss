@@ -1,0 +1,30 @@
+@media screen and (max-width: 1024px) {
+
+   .press-callout {
+      .title-lrg-4 {
+         font-size: 2.7vw;
+         line-height: 2.7vw;
+      }
+   }
+
+}
+
+@media screen and (max-width: 768px) {
+
+   .press-callout {
+      text-align: center;
+      justify-content: center;
+      .title-lrg-4 {
+         font-size: 2.625rem;
+         line-height: 2.625rem;
+      }
+      .form {
+         display: block !important;
+         width: 100% !important;
+         flex: 0 1 auto !important;
+         padding-left: 0 !important;
+         padding-top: 3rem;
+      }
+   }
+
+}

@@ -1,0 +1,43 @@
+@media screen and (max-width: 960px) {
+
+   .text-image {
+      .text {
+         .pr-6 {
+            padding-right: 5vw !important;
+         }
+      }
+   }
+
+}
+
+@media screen and (max-width: 768px) {
+
+   .text-image {
+      margin: 0;
+      .text {
+         > div {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+         }
+         .pr-6 {
+            padding-right: 0 !important;
+            padding-bottom: 5vw;
+         }
+      }
+      .image {
+         > div {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+         }
+      }
+      &.ti-second {
+         .image {
+            order: 2;
+            > div {
+               padding-top: 1.5rem;
+            }
+         }
+      }
+   }
+
+}

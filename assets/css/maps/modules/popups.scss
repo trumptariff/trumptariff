@@ -1,0 +1,81 @@
+.popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   z-index: 999999;
+   background-color: rgba(0,0,0,.85);
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   transition: 300ms ease all;
+   .content-wrapper {
+      padding: 20px;
+      .content {
+         background-color: #fff;
+         padding: 20px;
+         text-align: center;
+         position: relative;
+         max-width: calc(100vw - 40px);
+         button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 15px;
+            height: 15px;
+            background-image: url(/assets/images/icons/close_red.svg);
+         }
+         .title {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+         }
+         .text {
+            padding-bottom: 20px;
+         }
+         .embed-container {
+            max-width: 100%;
+            width: 640px;
+         }
+         .image {
+            display: block;
+            img {
+               display: block;
+               max-width: 100%;
+               width: 500px;
+            }
+         }
+         .button {
+            padding-top: 20px;
+         }
+         .form {
+            .text {
+               padding-bottom: 0;
+            }
+            &.alerts-form {
+               .g-recaptcha {
+                  > div {
+                     margin: 0 auto;
+                  }
+               }
+            }
+         }
+      }
+   }
+   &[aria-hidden="true"] {
+      display: none;
+      pointer-events: none;
+   }
+}
+@media screen and (max-width: 375px){
+   .popup {
+      .content-wrapper {
+         padding: 10px;
+         .content {
+            padding: 10px;
+         }
+      }
+   }
+}

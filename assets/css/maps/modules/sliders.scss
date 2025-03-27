@@ -1,0 +1,247 @@
+.video-slider {
+   overflow: hidden;
+   padding-top: 5vw;
+   padding-bottom: 5vw;
+   .video {
+      transition: 300ms ease all;
+      opacity: 0;
+      pointer-events: none;
+      .image {
+         position: relative;
+         display: block;
+         width: 100%;
+         cursor: default;
+         svg {
+            opacity: 0;
+            transition: 300ms ease all;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            .border {
+               stroke-dashoffset: 0;
+               stroke-dashArray: 300;
+               stroke-width: 4px;
+               transition: stroke-dashoffset 500ms ease, opacity 500ms ease;
+            }
+            .icon {
+               transform: scale(.8);
+               transform-origin: 50% 50%;
+               transition: transform 200ms ease-out;
+            }
+         }
+         &:hover {
+            svg {
+               .border {
+                  opacity: 1;
+                  stroke-dashoffset: 300;
+               }
+               .icon {
+                  transform: scale(.9);
+               }
+            }
+         }
+      }
+      .text {
+         opacity: 0;
+         visibility: hidden;
+         pointer-events: none;
+         transition: 300ms ease all;
+         text-align: center;
+         h3 {
+            font-size: 12px;
+            line-height: 15px;
+            margin-bottom: 5px;
+         }
+         p {
+            font-weight: 300;
+            font-size: 10px;
+            line-height: 14px;
+         }
+      }
+      .share {
+         transition: 300ms ease all;
+         opacity: 0;
+         pointer-events: none;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         li {
+            margin: 0 9px;
+            a {
+               svg {
+                  * {
+                     transition: 300ms ease all;
+                  }
+               }
+            }
+         }
+      }
+      &.swiper-slide-active {
+         opacity: 1;
+         transform: scale(1.35);
+         pointer-events: all;
+         .image {
+            cursor: pointer;
+            svg {
+               opacity: 1;
+            }
+         }
+         .text {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+         }
+         .share {
+            opacity: 1;
+            pointer-events: all;
+            a {
+               cursor: pointer;
+               &:hover {
+                  svg {
+                     * {
+                        fill: #fff;
+                     }
+                  }
+               }
+            }
+         }
+      }
+      &.swiper-slide-prev {
+         opacity: .75;
+         transform: perspective( 300px ) rotateY( 45deg ) scale(.7);
+      }
+      &.swiper-slide-next {
+         opacity: .75;
+         transform: perspective( 300px ) rotateY( -45deg ) scale(.7);
+      }
+   }
+   .swiper-button-prev,
+   .swiper-button-next {
+      top: 47%;
+      opacity: .25;
+      transition: 300ms ease all;
+      width: 30px;
+      height: 30px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-image: url(/assets/images/icons/carrot.svg);
+      &:after {
+         display: none;
+      }
+      &:hover {
+         opacity: 1;
+      }
+   }
+   .swiper-button-prev {
+      left: 23.75%;
+      transform: rotate(90deg);
+   }
+   .swiper-button-next {
+      right: 23.75%;
+      transform: rotate(-90deg);
+   }
+}
+
+@media screen and (max-width: 1024px){
+
+   .video-slider {
+      .swiper-button-prev,
+      .swiper-button-next {
+         width: 24px;
+         height: 24px;
+      }
+      .swiper-button-prev {
+         left: 26.4%;
+      }
+      .swiper-button-next {
+         right: 26.4%;
+      }
+   }
+
+}
+
+@media screen and (max-width: 960px){
+
+   .video-slider {
+      .video {
+         .image {
+            svg {
+               width: 80px;
+               height: 80px;
+            }
+         }
+      }
+   }
+
+}
+
+@media screen and (max-width: 677px){
+
+   .video-slider {
+      padding: 0;
+      margin: 0 5vw;
+      .video {
+         .text {
+            h3 {
+               font-size: 15px;
+               line-height: 15px;
+            }
+            p {
+               font-size: 14px;
+               line-height: 18px;
+            }
+         }
+         .share {
+            padding-top: 1rem !important;
+            li {
+               margin: 0 12px;
+               a {
+                  svg {
+                     width: 16px;
+                     height: 16px;
+                  }
+               }
+            }
+         }
+         &.swiper-slide-prev,
+         &.swiper-slide-next {
+            opacity: 1;
+            transform: none;
+         }
+         &.swiper-slide-active {
+            transform: none;
+         }
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+         top: 50%;
+         width: 10vw;
+         display: flex;
+         justify-content: center;
+         background-image: none;
+         opacity: 1;
+         &:after {
+            display: block;
+            content: '';
+            width: 24px;
+            height: 24px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url(/assets/images/icons/carrot.svg);
+         }
+         &.swiper-button-disabled {
+            opacity: .25;
+            cursor: default;
+            pointer-events: none;
+         }
+      }
+      .swiper-button-prev {
+         left: 0;
+      }
+      .swiper-button-next {
+         right: 0;
+      }
+   }
+
+}
